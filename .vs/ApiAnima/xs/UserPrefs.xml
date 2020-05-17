@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{A6DEAC3D-62C3-4897-B2D4-4259F25CE68A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ApiAnima/Data/WebApiSchoolContext.cs">
+    <Files>
+      <File FileName="ApiAnima/Controllers/AlunoController.cs" Line="85" Column="20" />
+      <File FileName="ApiAnima/Models/Aluno.cs" Line="10" Column="36" />
+      <File FileName="ApiAnima/Models/Usuario.cs" Line="18" Column="59" />
+      <File FileName="ApiAnima/Startup.cs" Line="47" Column="1" />
+      <File FileName="ApiAnima/Models/Grade.cs" Line="18" Column="9" />
+      <File FileName="ApiAnima/Models/Matricula.cs" Line="1" Column="1" />
+      <File FileName="ApiAnima/Data/WebApiSchoolContext.cs" Line="11" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
+          <Node name="ApiAnima" expanded="True">
+            <Node name="ApiAnima" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="WebApiSchoolContext.cs" selected="True" />
+              </Node>
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ApiAnima PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
