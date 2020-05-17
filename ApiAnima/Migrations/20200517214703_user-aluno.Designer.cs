@@ -4,14 +4,16 @@ using ApiAnima.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiAnima.Migrations
 {
     [DbContext(typeof(WebApiSchoolContext))]
-    partial class WebApiSchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20200517214703_user-aluno")]
+    partial class useraluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,7 +28,11 @@ namespace ApiAnima.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("cpf")
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Usuariocpf")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<long>("ra")
@@ -34,9 +40,7 @@ namespace ApiAnima.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("cpf")
-                        .IsUnique()
-                        .HasFilter("[cpf] IS NOT NULL");
+                    b.HasIndex("Usuariocpf");
 
                     b.ToTable("Alunos");
                 });
@@ -131,8 +135,10 @@ namespace ApiAnima.Migrations
             modelBuilder.Entity("ApiAnima.Models.Aluno", b =>
                 {
                     b.HasOne("ApiAnima.Models.Usuario", "Usuario")
-                        .WithOne("Aluno")
-                        .HasForeignKey("ApiAnima.Models.Aluno", "cpf");
+                        .WithMany()
+                        .HasForeignKey("Usuariocpf")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ApiAnima.Models.Matricula", b =>

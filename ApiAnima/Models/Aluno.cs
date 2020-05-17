@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ApiAnima.Models
 {
@@ -10,12 +11,9 @@ namespace ApiAnima.Models
         [Key]
         public int Id { get; set; }
         public long ra { get; set; }
-        public int usuarioId { get; set; }        
+        public string cpf { get; set; }
+        [JsonIgnore]
         public Usuario Usuario { get; set; }
-        //public List<Matricula> matriculas { get; set; }
 
-        public Aluno()
-        {
-        }
     }
 }

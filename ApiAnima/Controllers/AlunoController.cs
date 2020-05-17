@@ -29,7 +29,7 @@ namespace ApiAnima.Controllers
         [HttpGet]
         public IEnumerable<Aluno> Get()
         {
-            return db.Alunos.ToList();
+           return db.Alunos.ToList();
         }
 
         // GET api/values/5
@@ -84,17 +84,19 @@ namespace ApiAnima.Controllers
 
             db.Usuarios.Add(usuario);
 
-            Aluno aluno = new Aluno();
-            aluno.Usuario = usuario;
-            //aluno.ra = ra;
-            //aluno.usuarioId = usuario.id;
-            aluno.ra = aluno.ra;
+            //Aluno aluno = new Aluno();
+            //aluno.Usuario = usuario;
+            //aluno.ra = aluno.ra;
 
-            db.Alunos.Add(aluno);
-            db.SaveChanges();
+            //db.Alunos.Add(aluno);
+            if (db.SaveChanges() > 0)
+            {
+                return usuario;
+            }
 
+            return null;
             //return "{ Usuário do tipo: Aluno, criado com sucesso. }";
-            return usuario;
+           
         }
 
         // PUT api/values/5

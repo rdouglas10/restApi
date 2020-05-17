@@ -17,7 +17,7 @@ namespace ApiAnima.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Password=MyP@ssw0rd;Persist Security Info=True; User ID=sa; Initial Catalog=apiSchoolDb; Data Source=localhost");
+            optionsBuilder.UseSqlServer("Persist Security Info=True; Integrated Security=SSPI; Initial Catalog=apiSchoolDb; Data Source=localhost");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -26,12 +26,11 @@ namespace ApiAnima.Data
                 entity.HasKey(e => new { e.AlunoId, e.GradeId });
             });
 
-            
-            modelBuilder.Entity<Aluno>()
-                    .HasOne(p => p.Usuario)
-                    .WithMany(b => b.alunos);
-            
 
+            modelBuilder.Entity<Usuario>()
+                    .HasOne(u => u.Aluno)
+                    .WithOne(a => a.Usuario)
+                    .HasForeignKey<Aluno>(a => a.cpf);
         }
 
         public WebApiSchoolContext()

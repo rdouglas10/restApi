@@ -14,11 +14,9 @@ namespace ApiAnima.Models
         public string email { get; set; }        
         public string login { get; set; }
         public string senha { get; set; }
-        public List<Aluno> alunos { get; set; }
+        public Aluno Aluno { get; set; }
+        //public virtual Aluno Aluno { get; set; }
         //public List<Professor> professores { get; set; }
 
-        public Usuario()
-        {         
-        }
     }
 }

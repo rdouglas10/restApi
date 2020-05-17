@@ -4,14 +4,16 @@ using ApiAnima.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiAnima.Migrations
 {
     [DbContext(typeof(WebApiSchoolContext))]
-    partial class WebApiSchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20200517221110_user-alunov2")]
+    partial class useralunov2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
